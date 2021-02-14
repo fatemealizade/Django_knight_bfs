@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'shortpath_knight',
+    'shortestpath_knight',
 ]
 
 MIDDLEWARE = [
