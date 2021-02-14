@@ -35,3 +35,13 @@ def knight_moves(position, N):
     moves = list(product([x-1, x+1], [y-2, y+2])) + list(product([x-2, x+2], [y-1, y+1]))
     moves = [(x,y) for [x, y] in moves if x >= 0 and y >= 0 and x < N  and y < N]
     return moves        
+
+
+if __name__ == '__main__':
+    N = int(input())
+    curr_pos_x = int(input()) - 1
+    curr_pos_y = int(input()) - 1
+    target_pos_x = int(input()) -1
+    target_pos_y = int(input()) -1
+    
+    print(knight_bfs([curr_pos_x, curr_pos_y], [target_pos_x, target_pos_y], N))  
