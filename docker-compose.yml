@@ -6,3 +6,19 @@ services:
     command: runserver 0.0.0.0:8000
     ports: 
       - 8000:8000
+    networks: 
+      - nginx_network
+    
+  nginx:
+    build: ./nginx
+    ports: 
+      - 80:80
+    networks: 
+      - nginx_network
+
+    depends_on: 
+      - knight
+
+networks: 
+  nginx_network:
+    name: nginx_network
