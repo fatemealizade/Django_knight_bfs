@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from itertools import product
+from django.views.decorators.csrf import csrf_exempt
 import math
 class knight:
     def __init__(self, x, y, distance):
@@ -7,7 +8,7 @@ class knight:
         self.y = y
         self.distance = distance
     
-    
+@csrf_exempt 
 def knight_bfs(curr_pos, target_pos, N):
     
     visited = [[False for i in range(N)] for j in range(N)]
@@ -35,7 +36,6 @@ def knight_moves(position, N):
     moves = list(product([x-1, x+1], [y-2, y+2])) + list(product([x-2, x+2], [y-1, y+1]))
     moves = [(x,y) for [x, y] in moves if x >= 0 and y >= 0 and x < N  and y < N]
     return moves        
-
 
 if __name__ == '__main__':
     N = int(input())
