@@ -1,5 +1,5 @@
 from django.urls import path, include
 from . import views
 urlpatterns = [
-    path('shortestpath/', views.shortestpath.as_view())
+    path('shortestpath/', views.shortestpath)
 ]
