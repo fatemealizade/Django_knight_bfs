@@ -1,8 +1,8 @@
 version: "3.9"
 
 services: 
-  web:
+  knight:
     build: .
-    command: runserver 0.0.0.0:8080
+    command: runserver 0.0.0.0:8000
     ports: 
-      - 8080:8080
+      - 8000:8000
